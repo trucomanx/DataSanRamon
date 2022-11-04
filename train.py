@@ -4,6 +4,7 @@ import sys
 sys.path.append('library')
 import extras as mylib
 import numpy as np
+import pandas as pd
 
 ##############################
 
@@ -27,9 +28,22 @@ data_dict=mylib.exel_to_dataframe_y(filename,
                                     sheet_name="TX_OUT", 
                                     labels=labels_y);
 
-data_xxxx=mylib.excel_to_dataframe( filename,
+data_xxx2=mylib.excel_to_dataframe( filename,
                                     sheet_name="TX_Visit2",
                                     titles=labels_x);
+data_xxx3=mylib.excel_to_dataframe( filename,
+                                    sheet_name="TX_Visit3",
+                                    titles=labels_x);
+data_xxx4=mylib.excel_to_dataframe( filename,
+                                    sheet_name="TX_Visit4",
+                                    titles=labels_x);
+data_xxx5=mylib.excel_to_dataframe( filename,
+                                    sheet_name="TX_Visit5",
+                                    titles=labels_x);
+
+#data_xxxx=pd.concat([data_xxx2,data_xxx3,data_xxx4,data_xxx5],axis=1)
+data_xxxx=pd.concat([data_xxx2,data_xxx3,data_xxx4],axis=1)
+
 X=data_xxxx.to_numpy();
 
 

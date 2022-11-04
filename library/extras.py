@@ -30,7 +30,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 def create_classifier(name='RadomForest'):
     if name=='RandomForest':
-        clf = RandomForestClassifier(max_depth=7, random_state=0);
+        clf = RandomForestClassifier(n_estimators=32,max_depth=7, random_state=0);
     elif name=='SVM':
         clf = svm.SVC(kernel='rbf');
     elif name=='KNN':
