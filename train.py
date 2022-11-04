@@ -62,7 +62,7 @@ for label in labels_y:
             #print(category)
             y=data_dict[label][category].to_numpy();
             
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=myseed);
+            X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y,test_size=0.33, random_state=myseed);
             clf.fit(X_train,y_train);
             acc=clf.score(X_test,y_test);
             
